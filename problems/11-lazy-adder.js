@@ -24,6 +24,14 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 function lazyAdder(firstNum) {
   // Your code here
+  return function(secondNum){
+    let sum = firstNum+secondNum;
+    return function(thirdNum){
+      let total = sum + thirdNum;
+      return total;
+    }
+  }
+
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -1,6 +1,6 @@
 /***********************************************************************
 Write a function reverseStr(str) that accepts a string and returns that string
-reversed. 
+reversed.
 
 Write this function using a fat arrow function!
 
@@ -13,7 +13,11 @@ let result3 = reverseStr("potato"); // returns "otatop"
 ***********************************************************************/
 
 // Your code here
-
+let reverseStr = (str) => {
+  let letters = str.split("");
+  let reverseLetters = letters.reverse();
+  return reverseLetters.join("")
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
     module.exports = reverseStr;
