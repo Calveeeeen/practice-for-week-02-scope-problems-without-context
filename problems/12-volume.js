@@ -23,27 +23,59 @@ console.log(table2(1)); // prints 6
 console.log(table2(75)); // STILL prints 6
 
 ***********************************************************************/
-function recVolume(height) {
-  // Your code here
-  let width, length;
-  return function(value){
-    if(value !== undefined){
-      if(width === undefined){
-        width = value;
-      }
-      else if(length === undefined){
-        length = value;
-      }
-      else{
-        return height * width * length;
-      }
-    }
-    else{
-      return height * width * length
-    }
-  }
+// solu1:
+// function recVolume(height) {
+//   // Your code here
+//   let width, length;
+//   return function(value){
+//     if(value !== undefined){
+//       if(width === undefined){
+//         width = value;
+//       }
+//       else if(length === undefined){
+//         length = value;
+//         return length * width * height;
+//       }
+//       else{
+//         return height * width * length;
+//       }
+//     }
+//     else{
+//       return height * width * length
+//     }
+//   }
 
+// }
+
+// solu2:
+function recVolume(height){
+  let width, length;
+  return function calculate(value){
+    if(width === undefined){
+      width = value;
+    }
+    else if(length === undefined){
+      length = value;
+    }
+    return length*width*height || calculate;
+  }
 }
+// solu3:
+// function recVolume(height){
+//   let width, length;
+//   return function calculate(value){
+//     if(width === undefined){
+//       width = value;
+//     }
+//     else if(length === undefined){
+//       length = value;
+//       return length*width*height;
+//     }
+//     else{
+//       return length*width*height || calculate;
+//     }
+//   }
+// }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
